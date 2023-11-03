@@ -32,10 +32,12 @@ binary_tree_t *get_sibling(binary_tree_t *node)
 
 binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 {
+	binary_tree_t *uncle;
+
 	if (node == NULL || node->parent == NULL)
 		return (NULL);
 
-	binary_tree_t *uncle = get_sibling(node->parent);
+	uncle = get_sibling(node->parent);
 
 	if (uncle != NULL)
 		return (uncle);
