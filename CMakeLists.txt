@@ -12,6 +12,11 @@ FILE(GLOB BT_SOURCES ./*.c)
 add_executable(main)
 target_sources(main PRIVATE ${BT_SOURCES})
 
+set_target_properties(main PROPERTIES
+  COMPILE_FLAGS "-fsanitize=address"
+  LINK_FLAGS "-fsanitize=address"
+)
+
 
 if(ENABLE_TESTING)
   enable_testing()
